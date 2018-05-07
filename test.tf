@@ -1,1 +1,2 @@
-"example" {}
+resource "null_resourceZ" "why" {
+}

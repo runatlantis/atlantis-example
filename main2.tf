@@ -1,4 +1,4 @@
-resource null_resource "test6" {
+resource null_resource "test66" {
 }
 
 resource null_resource "test7" {

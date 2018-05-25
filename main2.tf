@@ -1,7 +1,7 @@
 resource null_resource "test66" {
 }
 
-resource null_resource "test7" {
+resource null_resource "test77" {
 }
 
 

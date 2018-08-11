@@ -1,0 +1,47 @@
+variable "Computer_Name" {
+    description = "Computername Netbios and Vsphere"
+    default = "win2016GUI"
+}
+variable "Template_Name" {
+    description = "Computer Template to use"
+    default = "win2016GUI"
+}
+variable "vsphere_server" {
+    description = "vsphere server for the environment - EXAMPLE: vcenter01.hosted.local"
+    default = "192.168.3.5"
+}
+ 
+variable "vsphere_user" {
+    description = "vsphere server for the environment - EXAMPLE: vsphereuser"
+    default = "vsphere@vsphere.local"
+}
+ 
+variable "vsphere_password" {
+    description = "vsphere server password for the environment"
+    default = "Password123!"
+}
+ 
+variable "virtual_machine_dns_servers" {
+  type    = "list"
+  default = ["192.168.3.253"]
+}
+
+variable "Domain_Name" {
+    description = "Domain to join."
+    default = "lab.local"
+} 
+
+variable "Domain_Password" {
+    description = "Domain Password"
+    default = "Password123!"
+} 
+
+variable "Domain_User" {
+    description = "Domain Username"
+    default = "Administrator"
+} 
+
+variable "Mappe"{
+    description = "Mappe for maskinen"
+    default = "terraform-test-folder"
+}

@@ -1,2 +1,3 @@
-resource "null_resource" "example" {
+provider "aws" {
 }
+resource aws_instance "web" { }

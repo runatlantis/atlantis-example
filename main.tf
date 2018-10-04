@@ -12,3 +12,12 @@ resource "aws_eip" "master-2" {
     Name = "Master-2"
   }
 }
+
+
+
+resource "aws_eip" "master-6" {
+  vpc      = true
+  tags { 
+    Name = "Master-6"
+  }
+}

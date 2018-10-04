@@ -5,10 +5,9 @@ resource "aws_eip" "master-1" {
   }
 }
 
-
-resource "aws_eip" "master-2" {
+resource "aws_eip" "master-3" {
   vpc      = true
   tags { 
-    Name = "Master-2"
+    Name = "Master-3"
   }
 }

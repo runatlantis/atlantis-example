@@ -13,4 +13,4 @@ terraform:
   boto_profile: aam-npe
   vars:
     environment: atlantis-test
-    account_id: '"317085423413"'
+    account_id: '"1234567890"'

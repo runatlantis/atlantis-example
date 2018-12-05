@@ -8,5 +8,4 @@ workflows:
   convert-tf:
     plan:
       steps:
-        - run: ops clusters/atlantis-cluster.yaml terraform template > ./atlantis-cluster.tf
-        - plan
+        - run: ops clusters/atlantis-cluster.yaml terraform plan

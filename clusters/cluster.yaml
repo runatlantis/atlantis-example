@@ -1,0 +1,6 @@
+---
+terraform:
+  path: compositions
+  boto_profile: aam-npe
+  vars:
+    environment: atlantis-test

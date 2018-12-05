@@ -1,0 +1,10 @@
+version: 2
+projects:
+- dir: modules/example
+  terraform_version: 0.11.7
+  workflow: convert-tf
+workflows:
+  convert-tf:
+    steps:
+      - run: "ops clusters/cluster.yaml terraform template --template-location ~/tmp/cluster/"
+      - plan

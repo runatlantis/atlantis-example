@@ -7,4 +7,5 @@ workflows:
   convert-tf:
     steps:
       - run: ops clusters/cluster.yaml terraform template --template-location ./cluster.tf
+      - init
       - plan

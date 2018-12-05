@@ -1,11 +1,11 @@
 version: 2
 projects:
-- dir: modules/example
-  terraform_version: 0.11.7
+- dir: .
+  terraform_version: v0.11.7
   workflow: convert-tf
 workflows:
   convert-tf:
     plan:
       steps:
-        - run: ops clusters/cluster.yaml terraform template --template-location ./cluster.tf
+        - run: ops clusters/atlantis- cluster.yaml terraform template > ./atlantis-cluster.tf
         - plan

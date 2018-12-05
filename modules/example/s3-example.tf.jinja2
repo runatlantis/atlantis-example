@@ -1,0 +1,16 @@
+provider "aws" {
+  shared_credentials_file = "${var.shared_credentials_file}"
+  profile                 = "${var.profile}"
+  region                  = "${var.region}"
+  version                 = "1.34"
+}
+
+
+resource "aws_s3_bucket" "aam-atl" {
+  bucket = "aam-atl-${var.environment}"
+  acl    = "private"
+
+  tags {
+    "Adobe:ArchPath"    = "test"
+  }
+}

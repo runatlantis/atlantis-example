@@ -1,0 +1,16 @@
+---
+
+inventory:
+  - plugin: cns
+    args:
+      clusters:
+        - region: us-east-1
+          boto_profile: aam-npe
+          names: ['{{ cluster }}']
+
+terraform:
+  path: compositions/cluster
+  boto_profile: aam-npe
+  vars:
+    environment: atlantis-test
+    account_id: '"317085423413"'

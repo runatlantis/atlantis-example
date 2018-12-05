@@ -1,0 +1,4 @@
+---
+jinja2.undefined: Undefined
+inventory.max_age: 864000
+terraform.version: 'v0.11.7'

@@ -1,0 +1,10 @@
+.terraform
+terraform.*plan
+terraform.tfvars
+*.pyc
+*.crt
+*.key
+*.retry
+.DS_Store
+.env
+.idea/

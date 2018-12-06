@@ -20,6 +20,9 @@ workflows:
     plan:
       steps:
         - run: ops clusters/atlantis-cluster.yaml terraform plan
+    apply:
+      steps:
+        - run: ops clusters/atlantis-cluster.yaml terraform apply
   qe:
     plan:
       steps:

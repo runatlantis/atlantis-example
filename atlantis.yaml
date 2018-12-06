@@ -10,4 +10,4 @@ workflows:
   convert-tf:
     plan:
       steps:
-        - run: ops clusters/$WORKSPACE.yaml terraform plan
+        - run: ops clusters/WORKSPACE.yaml terraform plan

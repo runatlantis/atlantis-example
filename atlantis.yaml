@@ -2,10 +2,12 @@ version: 2
 projects:
 
 - dir: .
+  autoplan:
+    enabled: false
   terraform_version: v0.11.7
   workflow: convert-tf
 workflows:
   convert-tf:
     plan:
       steps:
-        - run: ops clusters/atlantis-cluster.yaml terraform plan
+        - run: ops clusters/${ENVIRONMENT}.yaml terraform plan

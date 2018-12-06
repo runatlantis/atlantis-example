@@ -6,11 +6,11 @@ provider "aws" {
 }
 
 
-# resource "aws_s3_bucket" "aam-atl" {
-#   bucket = "aam-atl-${var.environment}"
-#   acl    = "private"
+resource "aws_s3_bucket" "aam-atl" {
+  bucket = "aam-atl-${var.environment}"
+  acl    = "private"
 
-#   tags {
-#     "Adobe:ArchPath"    = "test"
-#   }
-# }
+  tags {
+    "Adobe:ArchPath"    = "test"
+  }
+}

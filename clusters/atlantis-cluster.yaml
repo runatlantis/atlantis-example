@@ -11,6 +11,7 @@ inventory:
 terraform:
   path: compositions/cluster
   boto_profile: aam-npe
+  remote_state: True
   vars:
     environment: atlantis-test
     account_id: '"1234567890"'

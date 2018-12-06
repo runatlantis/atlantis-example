@@ -1,13 +1,26 @@
 version: 2
 projects:
 
-- dir: .
+- name: atlantis-cluster
+  dir: .
   autoplan:
     enabled: false
   terraform_version: v0.11.7
-  workflow: convert-tf
+  workflow: atlantis-cluster
+
+- name: qe
+  dir: .
+  autoplan:
+    enabled: false
+  terraform_version: v0.11.7
+  workflow: qe
+
 workflows:
-  convert-tf:
+  atlantis-cluster:
     plan:
       steps:
         - run: ops clusters/atlantis-cluster.yaml terraform plan
+  qe:
+    plan:
+      steps:
+        - run: ops clusters/qe.yaml terraform plan

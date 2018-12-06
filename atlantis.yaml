@@ -2,14 +2,14 @@ version: 2
 projects:
 
 - name: atlantis-cluster
-  dir: .
+  dir: compositions/cluster/
   autoplan:
     enabled: false
   terraform_version: v0.11.7
   workflow: atlantis-cluster
 
 - name: qe
-  dir: .
+  dir: compositions/qe
   autoplan:
     enabled: false
   terraform_version: v0.11.7

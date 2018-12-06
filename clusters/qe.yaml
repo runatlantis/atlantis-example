@@ -1,0 +1,16 @@
+---
+
+inventory:
+  - plugin: cns
+    args:
+      clusters:
+        - region: us-east-1
+          boto_profile: aam-npe
+          names: ['{{ cluster }}']
+
+terraform:
+  path: compositions/qe
+  boto_profile: aam-npe
+  vars:
+    environment: qe
+    account_id: '"1234567890"'

@@ -3,18 +3,6 @@ variable "shared_credentials_file" {}
 variable "environment" {}
 variable "account_id" {}
 
-{% if terraform.remote_state %}
-terraform {
-  backend "s3" {
-    bucket = "aam-terraform-npe"
-    key    = "terraform.{{ terraform.vars.cluster }}.tfstate"
-    dynamodb_table = "terraform_lock"
-    region = "us-east-1"
-    shared_credentials_file={{ terraform.vars.shared_credentials_file }}
-    profile = "{{ terraform.boto_profile }}"
-  }
-}
-{% endif %}
 
 module "common_main_resources-va6" {
   source = "../../modules/example"

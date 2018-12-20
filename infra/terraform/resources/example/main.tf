@@ -11,3 +11,9 @@ provider "aws" {
   region  = "eu-west-1"
   version = "~> 1.50"
 }
+
+module "s3" {
+  source = "../../modules/s3_bucket"
+
+  bucket_name = "mojap-atlantis-test-bucket"
+}

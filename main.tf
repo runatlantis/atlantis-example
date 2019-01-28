@@ -27,3 +27,5 @@ terraform {
     skip_metadata_api_check     = true
   }
 }
+
+resource "null_resource" "example" {}

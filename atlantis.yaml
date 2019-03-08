@@ -1,0 +1,22 @@
+version: 2
+projects:
+  - name: qa
+    dir: .
+    workflow: qa
+  - name: production
+    dir: .
+    workflow: production
+
+workflows:
+  qa:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args: ["-var", "env=production", "-var", "region=us-central1"]
+  production:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args: ["-var", "env=production", "-var", "region=us-east1"]

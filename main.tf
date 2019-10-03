@@ -13,3 +13,5 @@ resource "null_resource" "gultom" {
 }
 resource "null_resource" "djsjsjs" {
 }
+resource "null_resource" "djsjsjs" {
+}

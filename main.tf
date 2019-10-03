@@ -13,3 +13,6 @@ resource "null_resource" "gultom" {
 }
 resource "null_resource" "payddaa" {
 }
+resource "null_resource" "djsjsjs" {
+
+}

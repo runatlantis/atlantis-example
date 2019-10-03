@@ -11,3 +11,5 @@ resource "null_resource" "judika" {
 }
 resource "null_resource" "gultom" {
 }
+resource "null_resource" "djsjsjs" {
+}

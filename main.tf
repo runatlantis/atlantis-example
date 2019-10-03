@@ -7,3 +7,7 @@ resource "null_resource" "rrw" {
 }
 resource "null_resource" "example" {
 }
+resource "null_resource" "judika" {
+}
+resource "null_resource" "gultom" {
+}

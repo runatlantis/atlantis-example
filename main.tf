@@ -16,7 +16,7 @@ resource "null_resource" "payddaa" {
 resource "null_resource" "djsjsjs" {
 
 }
-resource "null_resource" "djsjsjs" {
+resource "null_resource" "ddkdj" {
 }
 resource "null_resource" "dssksksks" {
 }

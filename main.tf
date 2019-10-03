@@ -7,7 +7,9 @@ resource "null_resource" "example" {
  }
 resource "null_resource" "djajjdjad" {
  }
-resource "null_resource" "akud" {
+resource "null_resource" "judikaaa" {
+ }
+resource "null_resource" "sjdjdjdjaaa" {
  }
 
 

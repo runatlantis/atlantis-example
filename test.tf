@@ -1,4 +1,4 @@
-#resource "null_resource" "example" {}
+resource "null_resource" "example" {}
 
 provider "aws" {
     version = "~> 2.0"

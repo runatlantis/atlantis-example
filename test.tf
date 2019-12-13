@@ -13,4 +13,6 @@ terraform {
         region = "eu-central-1"
         profile = "asaf-aws-sandbox"
     }
+
+    required_version = ">=0.11"
 }

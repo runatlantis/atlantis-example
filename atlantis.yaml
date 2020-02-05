@@ -1,0 +1,10 @@
+version: 3
+automerge: true
+
+projects:
+- name: atlantis-test
+  dir: .
+  autoplan:
+    when_modified: ["*.tf*"]
+    enabled: true
+  workflow: atlantis-test-networking

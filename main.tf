@@ -11,3 +11,4 @@ resource "template_dir" "config2" {
   source_dir      = "/root/demo/instance_config_templates"
   destination_dir = "/root/demo/instance_config2-test2"
 }
+

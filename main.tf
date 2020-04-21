@@ -1,6 +1,7 @@
-resource "null_resource" "example" {
+provider "template" {
 }
 
-resource "null_resource" "example2" {
+resource "template_dir" "config" {
+  source_dir      = "/root/demo/instance_config_templates"
+  destination_dir = "/root/demo/instance_config2-test"
 }
-

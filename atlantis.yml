@@ -1,0 +1,25 @@
+---
+version: 3
+projects:
+- name: unstable
+  dir: unstable
+  workspace: unstable
+  terraform_version: v0.11.0
+  autoplan:
+    when_modified: ["*.tf", "../modules/**.tf"]
+    enabled: true
+  apply_requirements: [mergeable, approved]
+- name: test
+  dir: test
+  workspace: test
+  terraform_version: v0.11.0
+  autoplan:
+    enabled: false
+  apply_requirements: [mergeable, approved]
+- name: prod
+  dir: prod
+  workspace: prod
+  terraform_version: v0.11.0
+  autoplan:
+    enabled: false
+  apply_requirements: [mergeable, approved]

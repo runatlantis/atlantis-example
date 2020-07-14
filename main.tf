@@ -227,3 +227,4 @@ output "webhost01_public_ip" {
   value = data.oci_core_vnic.webhost01Vnics.public_ip_address
 }
 
+

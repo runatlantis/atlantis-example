@@ -61,7 +61,7 @@ resource "google_compute_instance" "client001" {
  }
 
 // Make sure flask is installed on all new instances for later steps
-   metadata_startup_script = file("/home/sandworm/unitydevops/terraform/bootstrap.sh")
+   metadata_startup_script = file("/tmp/bootstrap.sh")
  metadata = {
    ssh-keys = "dmalicia:${file("/tmp/id_rsa.pub")}"
             }

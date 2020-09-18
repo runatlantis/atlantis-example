@@ -1,6 +1,6 @@
 // Configure the Google Cloud provider
 provider "google" {
- credentials = file("CREDENTIALS_FILE.json")
+ credentials = file("/tmp/CREDENTIALS_FILE.json")
  project     = "heroic-muse-289316"
  region      = "us-west1"
 }

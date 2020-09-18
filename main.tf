@@ -34,9 +34,9 @@ resource "google_compute_instance" "controller001" {
 
 // Make sure flask is installed on all new instances for later steps
 //   metadata_startup_script = "sudo apt-get update; sudo apt-get install -yq build-essential python-pip rsync; pip install flask"
-   metadata_startup_script = file("/home/sandworm/unitydevops/terraform/controllerbootstrap.sh")
+   metadata_startup_script = file("/tmp/controllerbootstrap.sh")
  metadata = {
-   ssh-keys = "dmalicia:${file("~/.ssh/id_rsa.pub")}"
+   ssh-keys = "dmalicia:${file("/tmp/id_rsa.pub")}"
             }
  network_interface {
    network = "default"
@@ -63,7 +63,7 @@ resource "google_compute_instance" "client001" {
 // Make sure flask is installed on all new instances for later steps
    metadata_startup_script = file("/home/sandworm/unitydevops/terraform/bootstrap.sh")
  metadata = {
-   ssh-keys = "dmalicia:${file("~/.ssh/id_rsa.pub")}"
+   ssh-keys = "dmalicia:${file("/tmp/id_rsa.pub")}"
             }
  network_interface {
    network = "default"

@@ -23,7 +23,7 @@ variable "db_remote_state_key" {
 variable "server_port" {
   description = "The port the server will use for HTTP requests"
   type        = number
-  default     = 8080
+  default     = 9090
 }
 
 variable "alb_name" {

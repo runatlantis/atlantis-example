@@ -1,0 +1,21 @@
+version: 3
+automerge: true
+projects:
+  - name: new
+    dir: terraform/stacks/smartprotection/new
+    workspace: dev
+    terraform_version: v0.14.4
+    autoplan:
+      when_modified: ["*.tf", "../../../modules/**.tf", "*.md"]
+      enabled: true
+    apply_requirements: [mergeable, approved]
+    workflow: new
+workflows:
+  new:
+    plan:
+      steps:
+        - init
+        - plan
+    apply:
+      steps:
+        - apply

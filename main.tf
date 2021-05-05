@@ -3,7 +3,7 @@ locals {
 }
 
 resource "null_resource" "example" {
-  for_each = local.names
+  for_each = toset(local.names)
 }
 
 output "null_resources" {

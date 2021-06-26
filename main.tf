@@ -2,5 +2,5 @@ resource "null_resource" "example" {
 }
 
 output "hello" {
-  value = "hello from atlantis!"
+  value = "shalom from atlantis!"
 }

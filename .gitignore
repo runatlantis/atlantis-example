@@ -1,0 +1,10 @@
+/.dcignore
+/.idea/.gitignore
+/.idea/atlantis-example.iml
+/.idea/aws.xml
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/encodings.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/codeStyles/Project.xml
+/.idea/vcs.xml

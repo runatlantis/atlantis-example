@@ -1,4 +1,4 @@
 resource "null_resource" "example" {
 }
-resource "null_resource" "r" {
+resource "null_resource" "o" {
 }

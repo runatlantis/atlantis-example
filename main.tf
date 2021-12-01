@@ -11,7 +11,7 @@ terraform {
 }
 
 resource "aws_s3_bucket" "b" {
-  bucket = "lmb2-my-tf-test-bucket"
+  bucket = "lmb-my-tf-test-bucket"
   acl    = "private"
 
   tags = {

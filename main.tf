@@ -28,7 +28,7 @@ module "ec2_instance" {
 
   name = "instance-${each.key}"
 
-  ami                    = "ami-ebd02392"
+  ami                    = "ami-078cbb92727dec530"
   instance_type          = "t3a.micro"
   key_name               = "cortex-operacoes"
   monitoring             = true

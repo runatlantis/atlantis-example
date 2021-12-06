@@ -19,22 +19,3 @@ resource "aws_s3_bucket" "b" {
     Environment = "Dev"
   }
 }
-
-module "ec2_instance" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
-  version = "~> 3.0"
-
-  name = "single-instance"
-
-  ami                    = "ami-078cbb92727dec530"
-  instance_type          = "t3a.micro"
-  key_name               = "cortex-operacoes"
-  monitoring             = true
-  vpc_security_group_ids = ["sg-039e93481645626c7"]
-  subnet_id              = "subnet-09ad30a977b2366cf"
-
-  tags = {
-    Terraform   = "true"
-    Environment = "dev"
-  }
-}

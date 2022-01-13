@@ -3,16 +3,6 @@ resource "aws_s3_bucket" "tf_course" {
     acl = "private"
 }
 
-terraform {
-  backend "s3" {
-    encrypt = true    
-    bucket = "hella-buckets-21321312312"
-    dynamodb_table = "terraform-state-lock-dynamo"
-    key    = "terraform.tfstate"
-    region = "us-east-1"
-  }
-}
-
 resource "aws_dynamodb_table" "dynamodb-terraform-state-lock" {
   name = "terraform-state-lock-dynamo"
   hash_key = "LockID"

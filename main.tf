@@ -27,7 +27,7 @@ resource "aws_instance" "web" {
   }
 }
 
-resource "aws_instance" "web" {
+resource "aws_instance" "web2" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.medium"
 

@@ -1,3 +1,4 @@
 key.sh
-**/.terraform/*
+**/.terraform
+*.tfstate*
 *.hcl

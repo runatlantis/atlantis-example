@@ -18,20 +18,20 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-resource "aws_instance" "web" {
-  ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.micro"
+# resource "aws_instance" "web" {
+#   ami           = data.aws_ami.ubuntu.id
+#   instance_type = "t3.micro"
 
-  tags = {
-    Name = "HelloWorld"
-  }
-}
+#   tags = {
+#     Name = "HelloWorld"
+#   }
+# }
 
-resource "aws_instance" "web2" {
-  ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.medium"
+# resource "aws_instance" "web2" {
+#   ami           = data.aws_ami.ubuntu.id
+#   instance_type = "t3.medium"
 
-  tags = {
-    Name = "HelloWorld2"
-  }
-}
+#   tags = {
+#     Name = "HelloWorld2"
+#   }
+# }

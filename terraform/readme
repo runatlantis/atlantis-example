@@ -1,0 +1,10 @@
+実行コマンド)
+  TF_SRC=. envchain aws-bargain ../docker/docker_run.sh terraform init
+  TF_SRC=. envchain aws-bargain ../docker/docker_run.sh terraform plan -out output.tfplan
+  TF_SRC=. envchain aws-bargain ../docker/docker_run.sh terraform apply output.tfplan
+  TF_SRC=. envchain aws-bargain ../docker/docker_run.sh terraform output
+  TF_SRC=. envchain aws-bargain ../docker/docker_run.sh terraform plan -destroy -out output.destroy.tfplan
+  TF_SRC=. envchain aws-bargain ../docker/docker_run.sh terraform apply output.destroy.tfplan
+
+SSHコマンド)
+  ssh atlantis.toku.by

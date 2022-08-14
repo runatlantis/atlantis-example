@@ -1,0 +1,20 @@
+---
+projects:
+  - dir: dev/demo
+    name: dev_demo
+    workflow: dev_demo
+
+version: 3
+workflows:
+  dev_demo:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../../tfvars/dev_demo.tfvars"
+#        - run: ../../../plan_slack_notifications.sh
+    apply:
+      steps:
+        - apply
+#        - run: ../../../apply_slack_notifications.sh

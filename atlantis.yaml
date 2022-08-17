@@ -1,20 +1,28 @@
----
-projects:
-  - dir: dev/demo
-    name: dev_demo
-    workflow: dev_demo
-
 version: 3
+automerge: true
+delete_source_branch_on_merge: true
+parallel_plan: true
+parallel_apply: true
+projects:
+- name: test
+  dir: myworkflows
+  workspace: default
+  terraform_version: v1.1.1
+  delete_source_branch_on_merge: true
+  autoplan:
+    when_modified: ["*.tf", "*.tfvars"]
+    enabled: true
+  apply_requirements: [mergeable, approved]
+  workflow: myworkflow
 workflows:
-  dev_demo:
+  myworkflow:
     plan:
       steps:
-        - init
-        - plan:
-            extra_args:
-              - "-var-file=../../tfvars/dev_demo.tfvars"
-#        - run: ../../../plan_slack_notifications.sh
+      - run: echo "In Terraform Init and Plan"
+      - init
+      - plan:
+          extra_args: ["-lock=false"]
     apply:
       steps:
-        - apply
-#        - run: ../../../apply_slack_notifications.sh
+      - run: echo "In Terraform Apply"
+      - apply

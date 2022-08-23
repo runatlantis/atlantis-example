@@ -1,4 +1,11 @@
-resource "null_resource" "example" {
+# Specify the GCP Provider
+provider "google" {
+project = var.project_id
+region  = var.region
 }
-resource "null_resource" "test1" {
+
+# Create a GCS Bucket
+resource "google_storage_bucket" "my_bucket" {
+name     = var.bucket_name
+location = var.region
 }

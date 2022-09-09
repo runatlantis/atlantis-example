@@ -1,0 +1,20 @@
+---
+projects:
+  - dir: ec2_new_instance
+    name: ec2
+    workflow: ec2
+
+version: 3
+workflows:
+  ec2:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args:
+              - "-var-file=../tfvars/ec2.tfvars"
+#        - run: ../../../plan_slack_notifications.sh
+    apply:
+      steps:
+        - apply
+#        - run: ../../../apply_slack_notifications.sh

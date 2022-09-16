@@ -7,6 +7,6 @@ data "aws_vpc" "my_vpc" {
   }
 }
 
-output "my_vpc" {
+output "my_vpc1" {
   value = data.aws_vpc.my_vpc.id
 }

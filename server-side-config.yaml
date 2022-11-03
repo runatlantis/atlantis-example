@@ -1,3 +1,10 @@
 repos:
   - id: github.com/lhenn-au/atlantis-example
-    apply_requirements: [approved, mergeable] 
+    apply_requirements: [approved, mergeable]
+workflows:
+  myworkflow:
+    plan:
+      steps:
+      - run: ./my-custom-script.sh
+      - init
+      - plan

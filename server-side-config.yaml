@@ -1,6 +1,7 @@
 repos:
   - id: github.com/lhenn-au/atlantis-example
     apply_requirements: [approved, mergeable]
+    workflow: myworkflow
 workflows:
   myworkflow:
     plan:

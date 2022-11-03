@@ -6,10 +6,10 @@ workflows:
   myworkflow:
     plan:
       steps:
-      - run: git clone git@github.com:lhenn-au/atlantis-example.git
+      # - run: git clone git@github.com:lhenn-au/atlantis-example.git
       - run: pwd; ls
-      - run: "$DIR/atlantis-example/my-custom-script.sh"
-      - run: cd "$DIR"
-      - run: pwd; ls
+      # - run: "$DIR/atlantis-example/my-custom-script.sh"
+      # - run: cd "$DIR"
+      # - run: pwd; ls
       - init
       - plan

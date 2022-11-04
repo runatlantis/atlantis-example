@@ -7,11 +7,10 @@ workflows:
     plan:
       steps:
       - run: echo "dir is $DIR"
-      - run: git clone git@github.com:lhenn-au/atlantis-example.git
+      - run: git clone git@github.com:lhenn-au/atlantis-example.git || true
       - run: pwd; ls
       - run: echo "dir is $DIR"
       - run: "$DIR/atlantis-example/my-custom-script.sh"
-      # - run: cd "$DIR"
-      # - run: pwd; ls
+      - run: rm -rf .terraform || true
       - init
       - plan

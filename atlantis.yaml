@@ -5,3 +5,7 @@ projects:
 - dir: project1
   autoplan:
     when_modified: ["../modules/module1/*.tf", "*.tf*"]
+- dir: project2
+  autoplan:
+    when_modified: ["../modules/module1/*.tf", "*.tf*"]
+  

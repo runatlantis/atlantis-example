@@ -4,8 +4,8 @@ delete_source_branch_on_merge: true
 parallel_plan: true
 parallel_apply: true
 projects:
-#- dir: .
-#  apply_requirements: [mergeable]
+- dir: .
+  apply_requirements: [mergeable]
 - dir: project1
   execution_order_group: 1
   autoplan:

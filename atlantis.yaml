@@ -3,15 +3,20 @@ parallel_plan: true
 parallel_apply: true
 projects:
 - dir: project1
+  execution_order_group: 1
   autoplan:
     when_modified: ["../modules/module1/*.tf", "*.tf*"]
 - dir: project2
+  execution_order_group: 1
   autoplan:
     when_modified: ["../modules/module1/*.tf", "*.tf*"]
 - dir: project3
+  execution_order_group: 2
   autoplan:
     when_modified: ["../modules/module2/*.tf", "*.tf*"]
 - dir: project4
+  execution_order_group: 2
   autoplan:
     when_modified: ["../modules/module2/*.tf", "*.tf*"]
+#   apply_requirements: [approved]
   

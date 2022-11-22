@@ -1,0 +1,7 @@
+version: 3
+parallel_plan: true
+parallel_apply: true
+projects:
+- dir: project1
+  autoplan:
+    when_modified: ["../modules/module1/*.tf", "*.tf*"]

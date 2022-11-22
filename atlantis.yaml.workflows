@@ -1,0 +1,16 @@
+# repos.yaml or atlantis.yaml
+workflows:
+  production:
+    plan:
+      steps:
+      - plan:
+          extra_args: ["-var-file", "production.tfvars"]
+
+# atlantis.yaml
+version: 3
+projects:
+# If two or more projects have the same dir and workspace, they must also have
+# a 'name' key to differentiate them.
+- name: project1-production
+  dir: project1
+  workflow: production

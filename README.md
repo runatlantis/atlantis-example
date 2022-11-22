@@ -14,3 +14,6 @@ A simple terraform project to use with `atlantis testdrive`.
 - https://www.runatlantis.io/docs/repo-level-atlantis-yaml.html#use-cases
 - https://www.runatlantis.io/docs/custom-workflows.html#tfvars-files
 - https://www.runatlantis.io/docs/apply-requirements.html
+- https://github.com/runatlantis/atlantis/issues/1148, 
+repo config not allowed to set 'workflow' key: server-side config needs 'allowed_overrides: [workflow]' #1148 
+- https://www.runatlantis.io/docs/server-side-repo-config.html

@@ -1,4 +1,6 @@
 version: 3
+automerge: true
+delete_source_branch_on_merge: true
 parallel_plan: true
 parallel_apply: true
 projects:
@@ -18,5 +20,5 @@ projects:
   execution_order_group: 2
   autoplan:
     when_modified: ["../modules/module2/*.tf", "*.tf*"]
-#   apply_requirements: [approved]
+#   apply_requirements: [mergeable, approved]
   

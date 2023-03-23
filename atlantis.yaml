@@ -1,0 +1,43 @@
+version: 3
+automerge: true
+delete_source_branch_on_merge: true
+parallel_plan: true
+parallel_apply: true
+projects:
+  - &template
+    name: gke_shared_cluster_template
+    dir: template
+    workspace: custom
+    terraform_version: v1.3.6
+#    delete_source_branch_on_merge: true
+#    repo_locking: true
+    autoplan:
+      enabled: true
+      when_modified: ["*.tf", "../shared/**/*.tf"]
+#    plan_requirements: [mergeable, approved, undiverged]
+#    apply_requirements: [mergeable, approved, undiverged]
+#    import_requirements: [mergeable, approved, undiverged]
+    workflow: myworkflow
+  - <<: *template
+    name: gke_shared_cluster_development
+    dir: ./gke_shared_cluster/development
+    workspace: gke-shared-cluster-dev
+  - <<: *template
+    name: gke_shared_cluster_non_production
+    dir: ./gke_shared_cluster/non-production
+    workspace: gke-shared-cluster-non-prod
+  - <<: *template
+    name: gke_shared_cluster_production
+    dir: ./gke_shared_cluster/production
+    workspace: gke-shared-cluster-prod
+workflows:
+  myworkflow:
+    plan:
+      steps:
+      - run: terraform fmt -check -recursive
+      - init
+      - plan
+    apply:
+      steps:
+      - run: echo hi
+      - apply

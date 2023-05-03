@@ -1,3 +1,7 @@
+pprovider "aws"{
+  profile="default"
+  region="us-east-1"
+  }
 resource "null_resource" "example" {
 }
 resource "aws_vpc" "three-tier_vpc" {

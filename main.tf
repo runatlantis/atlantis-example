@@ -36,3 +36,5 @@ resource "null_resource" "my-example3" {
 }
 resource "null_resource" "lock" {
 }
+resource "null_resource" "lock2" {
+}

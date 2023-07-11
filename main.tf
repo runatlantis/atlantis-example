@@ -34,3 +34,5 @@ resource "null_resource" "example" {
 }
 resource "null_resource" "lock" {
 }
+resource "null_resource" "lock" {
+}

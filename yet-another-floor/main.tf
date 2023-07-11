@@ -34,3 +34,7 @@ resource "null_resource" "example" {
 }
 resource "null_resource" "example2" {
 }
+
+module "common" {
+  source = "../modules/common"
+}

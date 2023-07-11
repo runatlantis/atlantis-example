@@ -1,0 +1,17 @@
+version: 3
+automerge: true
+projects:
+- name: another-floor
+  dir: another-floor/
+  autoplan:
+    when_modified: [
+      "*.tf*",
+      "../modules/*/*.tf",
+    ]
+- name: yet-another-floor
+  dir: yet-another-floor/
+  autoplan:
+    when_modified: [
+      "*.tf*",
+      "../modules/*/*.tf",
+    ]

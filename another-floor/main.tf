@@ -38,3 +38,6 @@ resource "null_resource" "example2" {
 module "common" {
   source = "../modules/common"
 }
+
+resource "null_resource" "main-directly" {
+}

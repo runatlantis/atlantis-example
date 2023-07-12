@@ -10,6 +10,7 @@ projects:
       "*.tf*",
       "modules/*/*.tf",
     ]
+  workflow: myworkflow
 - name: another-floor
   dir: another-floor/
   autoplan:
@@ -17,6 +18,7 @@ projects:
       "*.tf*",
       "../modules/*/*.tf",
     ]
+  workflow: myworkflow
 - name: yet-another-floor
   dir: yet-another-floor/
   autoplan:
@@ -24,3 +26,16 @@ projects:
       "*.tf*",
       "../modules/*/*.tf",
     ]
+  workflow: myworkflow
+workflows:
+  myworkflow:
+    plan:
+      steps:
+      - run:
+          command: terraform fmt -check=true -write=false
+      - init
+      - plan
+    apply:
+      steps:
+      - run: echo hi
+      - apply

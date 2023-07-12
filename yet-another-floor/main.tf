@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    aws = {
+    aws   = {
       source  = "hashicorp/aws"
       version = "~> 4.59.0"
     }
@@ -33,6 +33,8 @@ provider "aws" {
 resource "null_resource" "example" {
 }
 resource "null_resource" "example2" {
+}
+resource "null_resource" "example3" {
 }
 
 module "common" {

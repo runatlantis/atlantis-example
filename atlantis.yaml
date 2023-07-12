@@ -8,7 +8,6 @@ projects:
       "*.tf*",
       "modules/*/*.tf",
     ]
-  workflow: myworkflow
 - name: another-floor
   dir: another-floor/
   autoplan:
@@ -16,7 +15,6 @@ projects:
       "*.tf*",
       "../modules/*/*.tf",
     ]
-  workflow: myworkflow
 - name: yet-another-floor
   dir: yet-another-floor/
   autoplan:
@@ -24,15 +22,3 @@ projects:
       "*.tf*",
       "../modules/*/*.tf",
     ]
-  workflow: myworkflow
-workflows:
-  myworkflow:
-    plan:
-      steps:
-      - init
-      - run: terraform fmt -check -diff
-      - plan
-    apply:
-      steps:
-      - run: echo hi
-      - apply

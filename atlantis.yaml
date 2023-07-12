@@ -29,9 +29,8 @@ workflows:
   myworkflow:
     plan:
       steps:
-      - run:
-          command: terraform fmt -check=true -write=false
       - init
+      - run: terraform fmt -check -diff
       - plan
     apply:
       steps:

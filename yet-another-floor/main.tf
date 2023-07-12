@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    aws   = {
+    aws  = {
       source  = "hashicorp/aws"
       version = "~> 4.59.0"
     }
@@ -25,7 +25,7 @@ provider "aws" {
   default_tags {
     tags = {
       "ManagedBy"   = "terraform"
-      "Environment" = "test"
+      "Environment"   = "test"
     }
   }
 }

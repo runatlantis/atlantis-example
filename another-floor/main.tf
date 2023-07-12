@@ -41,3 +41,5 @@ module "common" {
 
 resource "null_resource" "main-directly" {
 }
+resource "null_resource" "main-directly2" {
+}

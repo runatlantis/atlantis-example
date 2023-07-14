@@ -36,3 +36,7 @@ resource "null_resource" "lock" {
 }
 resource "null_resource" "lock2" {
 }
+
+module "common" {
+  source = "./modules/common"
+}

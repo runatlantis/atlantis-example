@@ -41,3 +41,5 @@ resource "null_resource" "main-directly" {
 }
 resource "null_resource" "main-directly2" {
 }
+resource "null_resource" "main-directly3" {
+}

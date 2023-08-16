@@ -1,0 +1,18 @@
+{"pipeline1": {
+    "pipeline": {
+        "S:": "${one_value}_pipeline"
+    },
+    "domain": {
+        "S:": "ss"
+    }
+},
+"pipeline2": {
+    "pipeline": {
+        "S:": "${two_value}_pipeline"
+    },
+    "domain": {
+        "S:": "ss"
+    }
+}
+
+}

@@ -1,0 +1,8 @@
+{
+    "pipeline": {
+        "S:": "1stpipeline"
+    },
+    "domain": {
+        "S:": "ss"
+    }
+}

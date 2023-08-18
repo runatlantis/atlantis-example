@@ -8,6 +8,7 @@ workflows:
   dev:
    plan:
       steps:
+        - init
         - plan:
           extra_args: ["-var-file", "dev.tfvars"]
    

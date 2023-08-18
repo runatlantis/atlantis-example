@@ -1,5 +1,0 @@
-version: 3
-projects:
-- dir: atlantis-example/Test
-  autoplan:
-    enabled: true

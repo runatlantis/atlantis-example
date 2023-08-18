@@ -10,5 +10,5 @@ workflows:
       steps:
         - init
         - plan:
-          extra_args: ["-var-file", "dev.tfvars"]
-   
+            extra_args: ["-var-file", "dev.tfvars"]
+          

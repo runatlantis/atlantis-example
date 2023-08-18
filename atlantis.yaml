@@ -1,4 +1,5 @@
 version: 3
+allowed_overrides: [workflow]
 projects:
  - name: project-x
    dir: test

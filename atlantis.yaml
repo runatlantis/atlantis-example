@@ -1,5 +1,5 @@
 version: 3
 projects:
-- dir: C:\Users\Thangaraju\OneDrive\Documents\GitHub\atlantis-example\Test
+- dir: atlantis-example/Test
   autoplan:
     enabled: true

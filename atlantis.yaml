@@ -16,4 +16,4 @@
 version: 3
 projects:
 - dir: test
-  terraform_version: 0.10.0
+ 

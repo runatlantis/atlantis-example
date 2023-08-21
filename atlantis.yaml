@@ -1,14 +1,14 @@
-# version: 3
-# projects:
-#  - name: project-x
-#    dir: test
-#     workflow: default
+version: 3
+projects:
+ - name: project-x
+   dir: test
+    workflow: default
 
-# workflows:
-#   default:
-#    plan:
-#       steps:
-#         - init
-#         - plan:
-#             extra_args: ["-var-file", "dev.tfvars"]
+workflows:
+  default:
+   plan:
+      steps:
+        - init
+        - plan:
+            extra_args: ["-var-file", "dev.tfvars"]
 

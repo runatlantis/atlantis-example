@@ -1,7 +1,6 @@
 # repos:
 #  - id: /.*/
 #    branch: /.*/
-#    allowed_overrides: [workflow]
 #    allow_custom_workflows: true
 
 # version: 3

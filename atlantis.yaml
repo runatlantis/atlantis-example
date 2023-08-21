@@ -2,7 +2,7 @@ version: 3
 projects:
  - name: project-x
    dir: test
-#    workflow: dev
+    workflow: dev
 
 # workflows:
 #   dev:

@@ -1,8 +1,3 @@
-# repos:
-#  - id: /.*/
-#    branch: /.*/
-#    allow_custom_workflows: true
-
 # version: 3
 # projects:
 #  - name: project-x

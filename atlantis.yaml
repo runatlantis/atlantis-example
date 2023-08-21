@@ -18,4 +18,4 @@
 #             extra_args: ["-var-file", "dev.tfvars"]
 # version: 3
 # projects:
-#   dir: test
+#   dir: test 

@@ -1,0 +1,15 @@
+version: 3
+allowed_overrides: [workflow]
+projects:
+ - name: project-x
+   dir: test
+   workflow: dev
+
+workflows:
+  dev:
+   plan:
+      steps:
+        - init
+        - plan:
+            extra_args: ["-var-file", "dev.tfvars1"]
+          

@@ -1,18 +1,25 @@
-# version: 3
-# allowed_overrides: [workflow]
-# projects:
-#  - name: project-x
-#    dir: test
-#    workflow: dev
-
-# workflows:
-#   dev:
-#    plan:
-#       steps:
-#         - init
-#         - plan:
-#             extra_args: ["-var-file", "dev.tfvars"]
+repos:
+ - id: /.*/
+   branch: /.*/
+   allowed_overrides: [workflow]
+   allow_custom_workflows: true
 
 version: 3
 projects:
-  dir: test
+ - name: project-x
+   dir: test
+   workflow: dev
+
+workflows:
+  dev:
+   plan:
+      steps:
+        - init
+        - plan:
+            extra_args: ["-var-file", "dev.tfvars"]
+
+
+
+# version: 3
+# projects:
+#   dir: test

@@ -16,7 +16,7 @@
 version: 3
 projects:
 - dir: test
-  workflow: dev
+  # workflow: dev
 
 # workflows:
 #    dev:

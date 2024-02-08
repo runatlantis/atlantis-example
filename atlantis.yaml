@@ -17,9 +17,6 @@ projects:
     autoplan:
       when_modified: ["../../modules/common/*.tf", ".terraform.lock.hcl", "*.tf"]
       enabled: true
-    plan_requirements: [mergeable, approved, undiverged]
-    apply_requirements: [mergeable, approved, undiverged]
-    import_requirements: [mergeable, approved, undiverged]
     execution_order_group: 1
     workflow: myworkflow
   - name: production
@@ -33,9 +30,6 @@ projects:
     autoplan:
       when_modified: ["./modules/**/*.tf", "workspaces/production/.terraform.lock.hcl", "workspaces/production/*.tf"]
       enabled: true
-    plan_requirements: [mergeable, approved, undiverged]
-    apply_requirements: [mergeable, approved, undiverged]
-    import_requirements: [mergeable, approved, undiverged]
     execution_order_group: 1
     workflow: myworkflow
 workflows:

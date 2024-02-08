@@ -15,7 +15,7 @@ projects:
     repo_locking: true
     custom_policy_check: false
     autoplan:
-      when_modified: ["modules/**/*.tf", "workspaces/staging/.terraform.lock.hcl", "workspaces/staging/*.tf"]
+      when_modified: ["../../modules/common/*.tf", ".terraform.lock.hcl", "*.tf"]
       enabled: true
     plan_requirements: [mergeable, approved, undiverged]
     apply_requirements: [mergeable, approved, undiverged]

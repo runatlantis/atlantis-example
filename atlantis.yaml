@@ -8,8 +8,23 @@ parallel_apply: true
 abort_on_execution_order_fail: true
 projects:
   - name: staging
-    branch: /main/
     dir: workspaces/staging
+    workspace: default
+    terraform_version: v1.5.7
+    delete_source_branch_on_merge: true
+    repo_locking: true
+    custom_policy_check: false
+    autoplan:
+      when_modified: ["../../modules/common/*.tf", ".terraform.lock.hcl", "*.tf"]
+      enabled: true
+    plan_requirements: [mergeable, approved, undiverged]
+    apply_requirements: [mergeable, approved, undiverged]
+    import_requirements: [mergeable, approved, undiverged]
+    execution_order_group: 1
+    workflow: myworkflow
+  - name: production
+    branch: /.*/
+    dir: workspaces/production
     workspace: default
     terraform_version: v1.5.7
     delete_source_branch_on_merge: true
@@ -22,17 +37,17 @@ projects:
     apply_requirements: [mergeable, approved, undiverged]
     import_requirements: [mergeable, approved, undiverged]
     execution_order_group: 1
-    workflow: staging_workflow
+    workflow: myworkflow
 workflows:
   myworkflow:
     plan:
       steps:
-        - run: echo "my custom command production"
+        - run: echo "my custom command"
         - init
         - plan:
             extra_args: ["-lock", "false"]
-        - run: echo "my custom command afterwards - production"
+        - run: echo "my custom command afterwards"
     apply:
       steps:
-        - run: echo "my custom apply command - production"
+        - run: echo "my custom apply command"
         - apply

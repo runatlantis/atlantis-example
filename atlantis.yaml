@@ -20,12 +20,12 @@ workflows:
   myworkflow:
     plan:
       steps:
-        - run: echo "my custom command"
+        - run: echo "hello"
         - init
         - plan:
             extra_args: ["-lock", "false"]
         - run: echo "my custom command afterwards"
     apply:
       steps:
-        - run: echo "my custom apply command"
+        - run: echo "hello apply"
         - apply

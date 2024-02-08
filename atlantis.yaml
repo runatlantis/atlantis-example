@@ -21,9 +21,7 @@ workflows:
     plan:
       steps:
         - init
-        - plan:
-            extra_args: ["-lock", "false"]
-        - run: echo "my custom command afterwards"
+        - plan
     apply:
       steps:
         - apply

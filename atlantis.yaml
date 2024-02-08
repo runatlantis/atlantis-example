@@ -1,19 +1,7 @@
 version: 3
-automerge: true
-autodiscover:
-  mode: auto
-delete_source_branch_on_merge: true
-parallel_plan: true
-parallel_apply: true
-abort_on_execution_order_fail: true
 projects:
   - name: staging
     dir: workspaces/staging
-    workspace: default
-    terraform_version: v1.5.7
-    delete_source_branch_on_merge: true
-    repo_locking: true
-    custom_policy_check: false
     autoplan:
       when_modified: ["../../modules/common/*.tf", ".terraform.lock.hcl", "*.tf"]
       enabled: true
@@ -23,14 +11,10 @@ projects:
     branch: /.*/
     dir: workspaces/production
     workspace: default
-    terraform_version: v1.5.7
-    delete_source_branch_on_merge: true
-    repo_locking: true
-    custom_policy_check: false
     autoplan:
       when_modified: ["./modules/**/*.tf", "workspaces/production/.terraform.lock.hcl", "workspaces/production/*.tf"]
       enabled: true
-    execution_order_group: 1
+    execution_order_group: 2
     workflow: myworkflow
 workflows:
   myworkflow:

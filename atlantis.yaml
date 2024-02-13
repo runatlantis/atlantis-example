@@ -1,0 +1,25 @@
+version: 3
+projects:
+- dir: .
+  name: production
+  workflow: production
+- dir: .
+  name: staging
+  workflow: staging
+  terraform_version: v0.14.8
+  autoplan:
+    enabled: false
+  apply_requirements: [approved]
+workflows:
+  production:
+   plan:
+     steps:
+     - init
+     - plan:
+         extra_args: ["-var-file", "prod.tfvars"]
+  staging:
+   plan:
+     steps:
+     - init
+     - plan:
+         extra_args: ["-var-file", "stag.tfvars"]

@@ -1,0 +1,48 @@
+version: 3
+automerge: true
+autodiscover:
+  mode: auto
+delete_source_branch_on_merge: true
+parallel_plan: true
+parallel_apply: true
+abort_on_execution_order_fail: true
+
+projects:
+# Hub Account Projects
+- id: /.*/
+  name: gxc-consortium-hub01
+  branch: /hub01/
+  dir: .
+  workspace: hub01
+  terraform_version: v1.9.4
+  autoplan:
+    when_modified:
+      - '../modules/**/*.tf'
+      - '.terraform.lock.hcl'
+      - '*.json'
+      - '*.yaml'
+      - '*.js'
+      - '*.tf'
+      - '*.tfvars'
+      - '*.hcl'
+  execution_order_group: 5
+  workflow: hub01-workflow
+
+- id: /.*/
+  name: gxc-consortium-hub02
+  branch: /hub02/
+  dir: .
+  workspace: hub02
+  terraform_version: v1.9.4
+  autoplan:
+    when_modified:
+      - '../modules/**/*.tf'
+      - '.terraform.lock.hcl'
+      - '*.json'
+      - '*.yaml'
+      - '*.js'
+      - '*.tf'
+      - '*.tfvars'
+      - '*.hcl'
+  execution_order_group: 6
+  workflow: hub02-workflow

@@ -1,0 +1,21 @@
+version: 3
+
+workflows:
+  branch_based_workflow:
+    plan:
+      steps:
+        - run: |
+            echo "🔎 Running PLAN step for branch: $HEAD_BRANCH_NAME"
+    apply:
+      steps:
+        - run: |
+            echo "🚀 Running APPLY step for branch: $HEAD_BRANCH_NAME"
+
+projects:
+  - name: my-branch-based-project
+    dir: .
+    autoplan:
+      when_modified: ["**/*.tf", "**/*.tfvars"]
+      enabled: true
+    workflow: branch_based_workflow
+    branch: /^release-*/

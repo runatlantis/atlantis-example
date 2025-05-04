@@ -18,4 +18,3 @@ projects:
       when_modified: ["**/*.tf", "**/*.tfvars"]
       enabled: true
     workflow: branch_based_workflow
-    branch: /^release-*/

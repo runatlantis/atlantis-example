@@ -1,0 +1,2 @@
+# Require @sothebys/identity team approval for prod changes
+/prod/ @sothebys/identity

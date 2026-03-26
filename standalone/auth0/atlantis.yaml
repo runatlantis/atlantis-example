@@ -1,0 +1,19 @@
+version: 3
+projects:
+  - name: dev
+    dir: standalone/auth0/settings/dev
+    workflow: custom
+  - name: staging
+    dir: standalone/auth0/settings/staging
+    workflow: custom
+  - name: prod
+    dir: standalone/auth0/settings/prod
+    workflow: custom
+    apply_requirements: [approved]
+workflows:
+  custom:
+    plan:
+      steps:
+        - run: ../../scripts/setup-env.sh
+        - init
+        - plan

@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: atlantis
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: atlantis.lvh.me
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: atlantis
+                port:
+                  number: 80

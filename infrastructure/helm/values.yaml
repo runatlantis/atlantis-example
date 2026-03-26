@@ -1,0 +1,55 @@
+orgAllowlist: "github.com/bhoggard-sothebys/atlantis-example"
+
+environment:
+  ATLANTIS_WEB_BASIC_AUTH: "true"
+  ATLANTIS_GH_USER: bhoggard-sothebys
+  DEV_AUTH0_DOMAIN: sothelabs.auth0.com
+  STAGING_AUTH0_DOMAIN: sothebys-stg.auth0.com
+  PROD_AUTH0_DOMAIN: sothebys.auth0.com
+  DEV_AUTH0_CLIENT_ID: rhqbwencyHvtCTouEqLd76Iippucb8De
+  STAGING_AUTH0_CLIENT_ID: CDTuWIVBChmrTkHtO4q3cx1cxlTVLW1b
+  PROD_AUTH0_CLIENT_ID: xtFW63CtGXxydb6LGPWYp30FwLncl2oL
+
+ingress:
+  enabled: true
+  ingressClassName: traefik
+  host: atlantis.lvh.me
+  path: /
+  pathType: Prefix
+
+environmentSecrets:
+  - name: ATLANTIS_WEB_USERNAME
+    secretKeyRef:
+      name: atlantis
+      key: basic-auth-username
+  - name: ATLANTIS_WEB_PASSWORD
+    secretKeyRef:
+      name: atlantis
+      key: basic-auth-password
+  - name: ATLANTIS_GH_TOKEN
+    secretKeyRef:
+      name: atlantis
+      key: github-token
+  - name: ATLANTIS_GH_WEBHOOK_SECRET
+    secretKeyRef:
+      name: atlantis
+      key: github-secret
+  - name: DEV_AUTH0_CLIENT_SECRET
+    secretKeyRef:
+      name: atlantis
+      key: dev-auth0-client-secret
+  - name: STAGING_AUTH0_CLIENT_SECRET
+    secretKeyRef:
+      name: atlantis
+      key: staging-auth0-client-secret
+  - name: PROD_AUTH0_CLIENT_SECRET
+    secretKeyRef:
+      name: atlantis
+      key: prod-auth0-client-secret
+
+repoConfig: |
+  repos:
+    - id: /.*/
+      allowed_overrides: [workflow, apply_requirements]
+      allow_custom_workflows: true
+      repo_config_file: standalone/auth0/atlantis.yaml

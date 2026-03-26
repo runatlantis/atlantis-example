@@ -1,0 +1,14 @@
+#!/bin/bash
+
+export ATLANTIS_GH_USER="bhoggard-sothebys"
+export ATLANTIS_GH_WEBHOOK_SECRET="$ATLANTIS_WEBHOOK_SECRET"
+export ATLANTIS_GH_TOKEN="$ATLANTIS_TOKEN"
+export ATLANTIST_GH_WEBHOOK_SECRET="$ATLANTIS_WEBHOOK_SECRET"
+# export ATLANTIST_GH_TEAM_ALLOWLIST=":plan,:policy_check,@sothebys/identity:apply" 
+export ATLANTIST_GH_TEAM_ALLOWLIST=":plan,:policy_check,@sothebys/nobody:apply" 
+
+atlantis server \
+  --atlantis-url="https://956c-100-38-10-160.ngrok-free.app" \
+  --repo-allowlist="github.com/bhoggard-sothebys/atlantis-example" \
+  --repo-config="$(dirname "$0")/../repos.yaml"
+

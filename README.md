@@ -3,6 +3,7 @@
 # Atlantis Setup Guide for GitHub Actions
 
 ## Introduction
+### Loud and Clear
 
 [Atlantis](https://www.runatlantis.io/) is a tool that helps you automate Terraform workflows. In this guide, we'll set up Atlantis to work with GitHub Actions for managing your Terraform configurations.
 

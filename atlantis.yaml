@@ -1,0 +1,24 @@
+version: 3
+automerge: true
+projects:
+- name: atlantis-testing-environment
+  workspace: default
+  dir: ./
+  terraform_version: 1.5.5
+  autoplan:
+    when_modified: ["*.tf", "*.hcl"]
+    enabled: true
+  # workflow: atlantis
+
+# If we're using Workflow
+#workflows:
+#  atlantis:
+#    plan:
+#      steps:
+#        - init
+#        - plan
+#    policy_check:
+#      steps:
+#        - show
+#        - policy_check:
+#            extra_args: ["--update", "github.com/rmaloloyon/atlantis-example?ref=master//policy"]

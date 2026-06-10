@@ -1,0 +1,26 @@
+# .github/workflows/atlantis.yml
+
+name: Atlantis
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  atlantis:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Terraform
+      uses: hashicorp/setup-terraform@v1
+
+    - name: Run Atlantis
+      env:
+        GH_TOKEN: ${{ secrets.ATLANTIS_GH_TOKEN }}
+      run: |
+        terraform init -input=false
+        terraform apply -auto-approve
+
